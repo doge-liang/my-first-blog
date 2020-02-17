@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="../static/js/jQuery1.7.js"></script>
+    <script type="text/javascript" src="../static/js/index.js"></script>
+    <meta charset="UTF-8" content="text/html">
+    <link href="../static/css/index.css" rel="stylesheet" type="text/css" charset="UTF-8" />
+
+    <title>NiaoWuuu</title>
+</head>
+
+<body>
+
+    <!-- 旁边的面板 -->
+    <div id="side-bar">
+        <div id="user-face-container">
+            <img id="user-face" src="../static/resource/userface/nier.jpg" />
+        </div>
+        <div id="username">Niaowuuu</div>
+        <div id="link-flow">
+            <div class="link-container">
+                <div class="single-link">
+                    首页
+                </div>
+            </div>
+            <div class="link-container">
+                <div class="single-link">
+                    笔记
+                </div>
+            </div>
+            <div class="link-container">
+                <div class="single-link">
+                    感想
+                </div>
+            </div>
+            <div class="link-container">
+                <div class="single-link">
+                    参考资料
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 面板占位 -->
+    <div id="side-bar-wrapper">
+    </div>
+
+    <!-- 内容面板 -->
+	{% block content %}
+	{% endblock %}
+
+    <!-- 归档面板 -->
+	{% block category-panel %}
+    <div id="category-panel">
+        <div id="category-panel-title">
+            归档
+        </div>
+
+		{% for tag in tags %}	
+        <div class="single-category">
+            <span>{{tag.tag_name}}</span>
+        </div>
+		{% endfor %}
+    </div>
+	{% endblock %}	
+
+    <!-- 脚本 -->
+</body>
+
+</html>
